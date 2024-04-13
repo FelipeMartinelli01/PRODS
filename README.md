@@ -41,6 +41,8 @@ Para usuários que não possuem cadastros:
   - Confirmação de senha
   - Termo de aceite
 
+![alt text](https://github.com/FelipeMartinelli01/PRODS/blob/f71711aa049cd0ca557de75b37747d55185ea997/assets/prints/login.png)
+
 ----
 
 Visualizar Produtos (Lucca Gonçalves):
@@ -69,6 +71,9 @@ A busca (funcional), que permite filtrar produtos especificamente por:
   - Atributos
   - Marca
 
+![alt text](https://github.com/FelipeMartinelli01/PRODS/blob/f71711aa049cd0ca557de75b37747d55185ea997/assets/prints/produtos.png)
+
+
 ----
 
 Cadastrar Produtos (Luís Felipe Botelho e João Gabriel Pieraço Silva):
@@ -85,6 +90,8 @@ Para cadastro de produtos, contendo:
 JavaScript utilizado para a função do botão "Salvar", que irá validar se todos os campos foram preenchidos, apresentando um alert caso algum campo esteja sem branco.
 Uma função para recarregar a página, ao clicar no botão "Limpar"
 
+![alt text](https://github.com/FelipeMartinelli01/PRODS/blob/f71711aa049cd0ca557de75b37747d55185ea997/assets/prints/cadastroProduto.png)
+
 ----
 
 Visualizar Categorias (Lucas Costa):
@@ -93,7 +100,9 @@ Possui um código de cada categoria como identificar único.
 Nome da categoria para identificar sé um Smartphone , televisão, videogame, dentre outras.
 Possui também o tipo, se é uma categoria principal ou secundária.
 
-Por fim, tem a aba de status, onde é possível verificar se o produto está disponível ou não
+Por fim, tem a aba de status, onde é possível verificar se o produto está disponível ou não.
+
+![alt text](https://github.com/FelipeMartinelli01/PRODS/blob/f71711aa049cd0ca557de75b37747d55185ea997/assets/prints/categorias.png)
 
 ----
 
@@ -136,6 +145,8 @@ Ao preencher os campos necessários, o usuário pode clicar no botão "Cadastrar
 
 Além disso, a tela conta com uma navbar do Bootstrap que inclui links para navegação rápida, e uma barra de pesquisa funcional.
 
+![alt text](https://github.com/FelipeMartinelli01/PRODS/blob/f71711aa049cd0ca557de75b37747d55185ea997/assets/prints/cadastroCategorias.png)
+
 ----
 
 Vitrine da loja (Marcelo Fiori):
@@ -154,4 +165,9 @@ Bootstrap utilizado para desenvolvimento do navbar, contendo:
   - Perfil
   - Barra de navegação, sendo possível pesquisar pelo nome do produto, que demonstrará o produtos pesquisado.
 
+![alt text](https://github.com/FelipeMartinelli01/PRODS/blob/f71711aa049cd0ca557de75b37747d55185ea997/assets/prints/home-1.png)
+
+----
+
+![alt text](https://github.com/FelipeMartinelli01/PRODS/blob/f71711aa049cd0ca557de75b37747d55185ea997/assets/prints/home-2.png)
 
