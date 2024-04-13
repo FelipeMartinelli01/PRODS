@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Login</title>
+  <link rel="stylesheet" href="/assets/css/styleLogin.css">
+  <script src="https://kit.fontawesome.com/cf6fa412bd.js" crossorigin="anonymous"></script>
+  <link rel="shortcut icon" href="/assets/images/favicon.svg" />
+</head>
+
+<body>
+  <div class="logo">
+    <img src="/assets/images/logo.svg" alt="">
+  </div>
+  
+  <div class="container">
+    <div class="buttonsForm">
+      <div class="btnColor"></div>
+      <button id="btnSignin">Entrar</button>
+      <button id="btnSignup">Increver-se</button>
+    </div>
+
+    <form id="signin">
+      <input type="text" id="email" placeholder="Email" required />
+      <p class="alertEmail" hidden="true">teste</p>
+      <i class="fas fa-envelope iEmail"></i>
+      <input type="password" id="senha" placeholder="Password" required />
+      <p class="alertSenha" hidden="true">teste</p>
+      <i class="fas fa-lock iPassword"></i>
+      <div class="divCheck">
+        <input type="checkbox" />
+        <span>Lembrar senha</span>
+      </div>
+      <button type="button" onclick="validaAcesso()" id="btnEntrar">ENTRAR</button>
+    </form>
+
+    <form id="signup">
+      <input type="text" placeholder="Email" required />
+      <i class="fas fa-envelope iEmail"></i>
+      <input type="password" placeholder="Password" required />
+      <i class="fas fa-lock iPassword"></i>
+      <input type="password" placeholder="Password" required />
+      <i class="fas fa-lock iPassword2"></i>
+      <div class="divCheck">
+        <input type="checkbox" required />
+        <span>Terms</span>
+      </div>
+      <button type="submit">Sign up</button>
+    </form>
+  </div>
+
+  <script src="/assets/js/login.js"></script>
+
+</body>
+
+</html>
+
+<!-- document.getElementById('btnEntrar').addEventListener('click', function(){
+  let email = document.getElementById('email').value;
+  let senha = document.getElementById('senha').value;
+  
+  if(email != "" && senha != ""){
+    window.location.href = 'index.html';
+  }
+}) -->
