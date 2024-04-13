@@ -163,7 +163,6 @@ Bootstrap utilizado para desenvolvimento do navbar, contendo:
   - Pedidos
   - Carrinho
   - Perfil
-  - Barra de navegação, sendo possível pesquisar pelo nome do produto, que demonstrará o produtos pesquisado.
 
 ![alt text](https://github.com/FelipeMartinelli01/PRODS/blob/f71711aa049cd0ca557de75b37747d55185ea997/assets/prints/home-1.png)
 
