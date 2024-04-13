@@ -1,0 +1,716 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Produtos</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.0/font/bootstrap-icons.css" rel="stylesheet">
+    <link rel="stylesheet" href="/assets/css/styleProdutos.css">
+    <link rel="shortcut icon" href="/assets/images/favicon.svg" />
+</head>
+
+<body>
+    <nav class="navbar bg-body-tertiary ">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="#"><img src="/assets/images/logo.svg" alt=""></a>
+        </div>
+    </nav>
+
+    <div class="header">
+        <h1>Lista de produtos cadastrados</h1>
+    </div>
+
+    <div class="cadastrar">
+        <a href="CadastrarPdt.html"><button  class="btn btn-primary" id="btnCadastrar"> Cadastrar novo produto</button></a>
+        <a href="categorias.html"><button  class="btn btn-primary" id="btnCadastrar"> Categorias</button></a>
+        <a href="index.html" target="_blank"><button  class="btn btn-primary" id="btnCadastrar"> Visualizar Loja</button></a>
+    </div>
+    <div class="formFiltro">
+        <form class="row g-3">
+            <div class="col-md-2">
+                <label for="inputCodigo" class="form-label"><b>Código</b></label>
+                <input type="text" class="form-control" id="inputCodigo" placeholder="Ex.: 1234" value="">
+            </div>
+            <div class="col-md-2">
+                <label for="inputStateStatus" class="form-label"><b>Status</b></label>
+                <select id="inputState" class="form-select">
+                    <option selected value="">Todos</option>
+                    <option value="inativo">Inativos</option>
+                    <option value="ativo">Ativos</option>
+                </select>
+            </div>
+            <div class="col-md-4">
+                <label for="inputNome" class="form-label"><b>Nome do produto</b></label>
+                <input type="text" class="form-control" id="inputNome" placeholder="Ex.: Iphone 13" value="">
+            </div>
+            <div class="col-md-3">
+                <label for="inputState" class="form-label "><b>Categoria</b></label>
+                <select id="inputStateCategoria" class="form-select">
+                    <option selected value="">Todos</option>
+                    <option value="Smartphone">Smartphone</option>
+                    <option value="Video Game">Video Game</option>
+                    <option value="Informática">Informática</option>
+                    <option value="Televisão">Televisão</option>
+                </select>
+            </div>
+            <div class="col-md-3">
+                <label class="form-label" for="autoSizingInputGroup"><b>Preço</b></label>
+                <div class="input-group">
+                    <div class="input-group-text">R$</div>
+                    <input type="text" class="form-control" id="precoMin" placeholder="0,00" value="">
+                    &nbsp à &nbsp
+                    <div class="input-group-text">R$</div>
+                    <input type="text" class="form-control" id="precoMax" placeholder="0,00" value="">
+                </div>
+            </div>
+            <div class="col-md-2">
+                <label for="inputState" class="form-label"><b>Estoque</b></label>
+                <select id="inputStateEstoque" class="form-select">
+                    <option selected value="">Todos</option>
+                    <option value="...">...</option>
+                </select>
+            </div>
+            <div class="col-md-2">
+                <label for="inputState" class="form-label"><b>Atributos</b></label>
+                <select id="inputStateAtributos" class="form-select">
+                    <option selected value="">Todos</option>
+                    <option value="...">...</option>
+                </select>
+            </div>
+            <div class="col-md-3">
+                <label for="inputState" class="form-label"><b>Marca</b></label>
+                <select id="inputStateMarca" class="form-select">
+                    <option selected value="">Todos</option>
+                    <option value="...">...</option>
+                </select>
+            </div>
+            <div class="col-md-1 d-flex align-items-center">
+                <button type="submit" class="btn btn-primary filtrar">Filtrar</button>
+            </div>
+        </form>
+    </div>
+    <div class="container-table">
+        <table class="table table-hover ">
+            <thead>
+                <tr>
+                    <th scope="col"><input type="checkbox" name="selectAll" id="selectAll"></th>
+                    <th scope="col">Código</th>
+                    <th scope="col">Status</th>
+                    <th scope="col">Produto</th>
+                    <th scope="col">Categoria</th>
+                    <th scope="col">Preço</th>
+                    <th scope="col">Estoque</th>
+                    <th scope="col">Qtd vendida</th>
+                    <th scope="col">Ações</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <th scope="col"><input type="checkbox" name="" id=""></th>
+                    <th scope="row">1</th>
+                    <td><select name="" id="" class="form-select statusProduto">
+                            <option selected>inativo</option>
+                            <option>ativo</option>
+                        </select></td>
+                    <td>
+                        <img class="imagemProduto" src="/assets/images/iphone14.jpg" alt="">
+                        Iphone 14
+                    </td>
+                    <td>Smartphone</td>
+                    <td>5.999</td>
+                    <td>20</td>
+                    <td>3</td>
+                    <td>
+                        <div class="modal fade" id="modal-trash" aria-hidden="true"
+                            aria-labelledby="exampleModalToggleLabel" tabindex="-1">
+                            <div class="modal-dialog modal-dialog-centered">
+                                <div class="modal-content">
+
+                                    <div class="modal-body">
+                                        <h5>Tem certeza que deseja remover esse produto?</h5>
+                                    </div>
+                                    <div class="modal-footer">
+                                        <button class="btn btn-danger" data-bs-target="#exampleModalToggle2"
+                                            data-bs-toggle="modal">Remover produto</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="modal fade" id="exampleModalToggle2" aria-hidden="true"
+                            aria-labelledby="exampleModalToggleLabel" tabindex="-1">
+                            <div class="modal-dialog modal-dialog-centered">
+                                <div class="modal-content bg-danger text-white">
+                                    <div class="modal-header">
+                                        <h1 class="modal-title fs-5" id="exampleModalToggleLabel">Produto removido com
+                                            sucesso</h1>
+                                        <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                            aria-label="Close"></button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="modal fade" id="exampleModalToggle3" aria-hidden="true"
+                            aria-labelledby="exampleModalToggleLabel" tabindex="-1">
+                            <div class="modal-dialog modal-dialog-centered">
+                                <div class="modal-content bg-success text-white">
+                                    <div class="modal-header">
+                                        <h1 class="modal-title fs-5 " id="exampleModalToggleLabel">Produto salvo com
+                                            sucesso
+                                        </h1>
+                                        <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                            aria-label="Close"></button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="modal fade" id="modal1" tabindex="-1" aria-labelledby="exampleModalLabel"
+                            aria-hidden="true">
+                            <div class="modal-dialog modal-dialog-centered">
+                                <div class="modal-content">
+                                    <div class="modal-header">
+                                        <h1 class="modal-title fs-5" id="exampleModalLabel">Editar produto</h1>
+                                        <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                            aria-label="Close"></button>
+                                    </div>
+                                    <div class="modal-body">
+                                        <form>
+                                            <div class="mb-3">
+                                                <label for="recipient-name" class="col-form-label">Código:</label>
+                                                <input type="text" class="form-control" value="1" id="recipient-name">
+                                            </div>
+                                            <div class="mb-3">
+                                                <label for="formFile" class="form-label">Foto:</label>
+                                                <input class="form-control" type="file" id="formFile">
+                                            </div>
+                                            <div class="mb-3">
+                                                <label for="name" class="col-form-label">Nome:</label>
+                                                <input type="text" class="form-control" value="Iphone 14" id="name">
+                                            </div>
+                                            <div class="mb-3">
+                                                <label for="category" class="col-form-label">Categoria:</label>
+                                                <input type="text" class="form-control" value="Smartphone"
+                                                    id="category">
+                                            </div>
+                                            <div class="mb-3">
+                                                <label for="price" class="col-form-label">Preço:</label>
+                                                <input type="text" class="form-control" value="5.999" id="price">
+                                            </div>
+                                        </form>
+                                    </div>
+                                    <div class="modal-footer">
+                                        <button type="button" class="btn btn-secondary"
+                                            data-bs-dismiss="modal">Fechar</button>
+                                        <button class="btn btn-primary" data-bs-target="#exampleModalToggle3"
+                                            data-bs-toggle="modal">Salvar</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <button style="border: none; background-color: transparent;" data-bs-target="#modal-trash"
+                            data-bs-toggle="modal"><i class="bi bi-trash"></i></button>
+                        <button type="button" style="border: none; background-color: transparent;"
+                            data-bs-toggle="modal" data-bs-target="#modal1" data-bs-whatever="@mdo"><i
+                                class="bi bi-pencil"></i></button>
+                    </td>
+                </tr>
+                <tr>
+                    <th scope="col"><input type="checkbox" name="" id=""></th>
+                    <th scope="row">2</th>
+                    <td><select name="" id="" class="form-select statusProduto">
+                            <option>inativo</option>
+                            <option selected>ativo</option>
+                        </select></td>
+                    <td>
+                        <img class="imagemProduto" src="/assets/images/s24.png" alt="">
+                        Galaxy S24 Ultra
+                    </td>
+                    <td>Smartphone</td>
+                    <td>7.000</td>
+                    <td>14</td>
+                    <td>6</td>
+                    <td>
+                        <div class="modal fade" id="modal2" tabindex="-1" aria-labelledby="exampleModalLabel"
+                            aria-hidden="true">
+                            <div class="modal-dialog modal-dialog-centered">
+                                <div class="modal-content">
+                                    <div class="modal-header">
+                                        <h1 class="modal-title fs-5" id="exampleModalLabel">Editar produto</h1>
+                                        <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                            aria-label="Close"></button>
+                                    </div>
+                                    <div class="modal-body">
+                                        <form>
+                                            <div class="mb-3">
+                                                <label for="recipient-name" class="col-form-label">Código:</label>
+                                                <input type="text" class="form-control" value="2" id="recipient-name">
+                                            </div>
+                                            <div class="mb-3">
+                                                <label for="formFile" class="form-label">Foto:</label>
+                                                <input class="form-control" type="file" id="formFile">
+                                            </div>
+                                            <div class="mb-3">
+                                                <label for="name" class="col-form-label">Nome:</label>
+                                                <input type="text" class="form-control" value="Galaxy S24 Ultra"
+                                                    id="name">
+                                            </div>
+                                            <div class="mb-3">
+                                                <label for="category" class="col-form-label">Categoria:</label>
+                                                <input type="text" class="form-control" value="Smartphone"
+                                                    id="category">
+                                            </div>
+                                            <div class="mb-3">
+                                                <label for="price" class="col-form-label">Preço:</label>
+                                                <input type="text" class="form-control" value="7.000" id="price">
+                                            </div>
+                                        </form>
+                                    </div>
+                                    <div class="modal-footer">
+                                        <button type="button" class="btn btn-secondary"
+                                            data-bs-dismiss="modal">Fechar</button>
+                                        <button class="btn btn-primary" data-bs-target="#exampleModalToggle3"
+                                            data-bs-toggle="modal">Salvar</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <button style="border: none; background-color: transparent;" data-bs-target="#modal-trash"
+                            data-bs-toggle="modal"><i class="bi bi-trash"></i></button>
+                        <button type="button" style="border: none; background-color: transparent;"
+                            data-bs-toggle="modal" data-bs-target="#modal2" data-bs-whatever="@mdo"><i
+                                class="bi bi-pencil"></i></button>
+                    </td>
+                </tr>
+                <tr>
+                    <th scope="col"><input type="checkbox" name="" id=""></th>
+                    <th scope="row">3</th>
+                    <td><select name="" id="" class="form-select statusProduto">
+                            <option selected>inativo</option>
+                            <option>ativo</option>
+                        </select></td>
+                    <td>
+                        <img class="imagemProduto" src="/assets/images/ps5.jpg" alt="">
+                        PS5
+                    </td>
+                    <td>Video Game</td>
+                    <td>2.900</td>
+                    <td>34</td>
+                    <td>9</td>
+                    <td>
+                        <div class="modal fade" id="modal3" tabindex="-1" aria-labelledby="exampleModalLabel"
+                            aria-hidden="true">
+                            <div class="modal-dialog modal-dialog-centered">
+                                <div class="modal-content">
+                                    <div class="modal-header">
+                                        <h1 class="modal-title fs-5" id="exampleModalLabel">Editar produto</h1>
+                                        <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                            aria-label="Close"></button>
+                                    </div>
+                                    <div class="modal-body">
+                                        <form>
+                                            <div class="mb-3">
+                                                <label for="recipient-name" class="col-form-label">Código:</label>
+                                                <input type="text" class="form-control" value="3" id="recipient-name">
+                                            </div>
+                                            <div class="mb-3">
+                                                <label for="formFile" class="form-label">Foto:</label>
+                                                <input class="form-control" type="file" id="formFile">
+                                            </div>
+                                            <div class="mb-3">
+                                                <label for="name" class="col-form-label">Nome:</label>
+                                                <input type="text" class="form-control" value="PS5" id="name">
+                                            </div>
+                                            <div class="mb-3">
+                                                <label for="category" class="col-form-label">Categoria:</label>
+                                                <input type="text" class="form-control" value="Video Game"
+                                                    id="category">
+                                            </div>
+                                            <div class="mb-3">
+                                                <label for="price" class="col-form-label">Preço:</label>
+                                                <input type="text" class="form-control" value="2.900" id="price">
+                                            </div>
+                                        </form>
+                                    </div>
+                                    <div class="modal-footer">
+                                        <button type="button" class="btn btn-secondary"
+                                            data-bs-dismiss="modal">Fechar</button>
+                                        <button class="btn btn-primary" data-bs-target="#exampleModalToggle3"
+                                            data-bs-toggle="modal">Salvar</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <button style="border: none; background-color: transparent;" data-bs-target="#modal-trash"
+                            data-bs-toggle="modal"><i class="bi bi-trash"></i></button>
+                        <button type="button" style="border: none; background-color: transparent;"
+                            data-bs-toggle="modal" data-bs-target="#modal3" data-bs-whatever="@mdo"><i
+                                class="bi bi-pencil"></i></button>
+                    </td>
+                </tr>
+                <tr>
+                    <th scope="col"><input type="checkbox" name="" id=""></th>
+                    <th scope="row">4</th>
+                    <td><select name="" id="" class="form-select statusProduto">
+                            <option selected>inativo</option>
+                            <option>ativo</option>
+                        </select></td>
+                    <td>
+                        <img class="imagemProduto" src="/assets/images/xboxSeriesX.jpg" alt="">
+                        Xbox Series X
+                    </td>
+                    <td>Video Game</td>
+                    <td>2.900</td>
+                    <td>34</td>
+                    <td>9</td>
+                    <td>
+                        <div class="modal fade" id="modal4" tabindex="-1" aria-labelledby="exampleModalLabel"
+                            aria-hidden="true">
+                            <div class="modal-dialog modal-dialog-centered">
+                                <div class="modal-content">
+                                    <div class="modal-header">
+                                        <h1 class="modal-title fs-5" id="exampleModalLabel">Editar produto</h1>
+                                        <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                            aria-label="Close"></button>
+                                    </div>
+                                    <div class="modal-body">
+                                        <form>
+                                            <div class="mb-3">
+                                                <label for="recipient-name" class="col-form-label">Código:</label>
+                                                <input type="text" class="form-control" value="4" id="recipient-name">
+                                            </div>
+                                            <div class="mb-3">
+                                                <label for="formFile" class="form-label">Foto:</label>
+                                                <input class="form-control" type="file" id="formFile">
+                                            </div>
+                                            <div class="mb-3">
+                                                <label for="name" class="col-form-label">Nome:</label>
+                                                <input type="text" class="form-control" value="Xbox Series X" id="name">
+                                            </div>
+                                            <div class="mb-3">
+                                                <label for="category" class="col-form-label">Categoria:</label>
+                                                <input type="text" class="form-control" value="Video Game"
+                                                    id="category">
+                                            </div>
+                                            <div class="mb-3">
+                                                <label for="price" class="col-form-label">Preço:</label>
+                                                <input type="text" class="form-control" value="2.900" id="price">
+                                            </div>
+                                        </form>
+                                    </div>
+                                    <div class="modal-footer">
+                                        <button type="button" class="btn btn-secondary"
+                                            data-bs-dismiss="modal">Fechar</button>
+                                        <button class="btn btn-primary" data-bs-target="#exampleModalToggle3"
+                                            data-bs-toggle="modal">Salvar</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <button style="border: none; background-color: transparent;" data-bs-target="#modal-trash"
+                            data-bs-toggle="modal"><i class="bi bi-trash"></i></button>
+                        <button type="button" style="border: none; background-color: transparent;"
+                            data-bs-toggle="modal" data-bs-target="#modal4" data-bs-whatever="@mdo"><i
+                                class="bi bi-pencil"></i></button>
+                    </td>
+                </tr>
+                <tr>
+                    <th scope="col"><input type="checkbox" name="" id=""></th>
+                    <th scope="row">5</th>
+                    <td><select name="" id="" class="form-select statusProduto">
+                            <option selected>inativo</option>
+                            <option>ativo</option>
+                        </select></td>
+                    <td>
+                        <img class="imagemProduto" src="/assets/images/televisaoSamsung.jpg" alt="">
+                        Televisao Samsung 4k
+                    </td>
+                    <td>Televisão</td>
+                    <td>5.000</td>
+                    <td>34</td>
+                    <td>9</td>
+                    <td>
+                        <div class="modal fade" id="modal5" tabindex="-1" aria-labelledby="exampleModalLabel"
+                            aria-hidden="true">
+                            <div class="modal-dialog modal-dialog-centered">
+                                <div class="modal-content">
+                                    <div class="modal-header">
+                                        <h1 class="modal-title fs-5" id="exampleModalLabel">Editar produto</h1>
+                                        <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                            aria-label="Close"></button>
+                                    </div>
+                                    <div class="modal-body">
+                                        <form>
+                                            <div class="mb-3">
+                                                <label for="recipient-name" class="col-form-label">Código:</label>
+                                                <input type="text" class="form-control" value="5" id="recipient-name">
+                                            </div>
+                                            <div class="mb-3">
+                                                <label for="formFile" class="form-label">Foto:</label>
+                                                <input class="form-control" type="file" id="formFile">
+                                            </div>
+                                            <div class="mb-3">
+                                                <label for="name" class="col-form-label">Nome:</label>
+                                                <input type="text" class="form-control" value="Televisao Samsung 4k"
+                                                    id="name">
+                                            </div>
+                                            <div class="mb-3">
+                                                <label for="category" class="col-form-label">Categoria:</label>
+                                                <input type="text" class="form-control" value="Televisão" id="category">
+                                            </div>
+                                            <div class="mb-3">
+                                                <label for="price" class="col-form-label">Preço:</label>
+                                                <input type="text" class="form-control" value="5.000" id="price">
+                                            </div>
+                                        </form>
+                                    </div>
+                                    <div class="modal-footer">
+                                        <button type="button" class="btn btn-secondary"
+                                            data-bs-dismiss="modal">Fechar</button>
+                                        <button class="btn btn-primary" data-bs-target="#exampleModalToggle3"
+                                            data-bs-toggle="modal">Salvar</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <button style="border: none; background-color: transparent;" data-bs-target="#modal-trash"
+                            data-bs-toggle="modal"><i class="bi bi-trash"></i></button>
+                        <button type="button" style="border: none; background-color: transparent;"
+                            data-bs-toggle="modal" data-bs-target="#modal5" data-bs-whatever="@mdo"><i
+                                class="bi bi-pencil"></i></button>
+                    </td>
+                </tr>
+                <tr>
+                    <th scope="col"><input type="checkbox" name="" id=""></th>
+                    <th scope="row">6</th>
+                    <td><select name="" id="" class="form-select statusProduto">
+                            <option selected>inativo</option>
+                            <option>ativo</option>
+                        </select></td>
+                    <td>
+                        <img class="imagemProduto" src="/assets/images/monitorLG.jpg" alt="">
+                        Monitor LG
+                    </td>
+                    <td>Informática</td>
+                    <td>1000</td>
+                    <td>34</td>
+                    <td>9</td>
+                    <td>
+                        <div class="modal fade" id="modal6" tabindex="-1" aria-labelledby="exampleModalLabel"
+                            aria-hidden="true">
+                            <div class="modal-dialog modal-dialog-centered">
+                                <div class="modal-content">
+                                    <div class="modal-header">
+                                        <h1 class="modal-title fs-5" id="exampleModalLabel">Editar produto</h1>
+                                        <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                            aria-label="Close"></button>
+                                    </div>
+                                    <div class="modal-body">
+                                        <form>
+                                            <div class="mb-3">
+                                                <label for="recipient-name" class="col-form-label">Código:</label>
+                                                <input type="text" class="form-control" value="6" id="recipient-name">
+                                            </div>
+                                            <div class="mb-3">
+                                                <label for="formFile" class="form-label">Foto:</label>
+                                                <input class="form-control" type="file" id="formFile">
+                                            </div>
+                                            <div class="mb-3">
+                                                <label for="name" class="col-form-label">Nome:</label>
+                                                <input type="text" class="form-control" value="Monitor LG" id="name">
+                                            </div>
+                                            <div class="mb-3">
+                                                <label for="category" class="col-form-label">Categoria:</label>
+                                                <input type="text" class="form-control" value="Informática"
+                                                    id="category">
+                                            </div>
+                                            <div class="mb-3">
+                                                <label for="price" class="col-form-label">Preço:</label>
+                                                <input type="text" class="form-control" value="1.000" id="price">
+                                            </div>
+                                        </form>
+                                    </div>
+                                    <div class="modal-footer">
+                                        <button type="button" class="btn btn-secondary"
+                                            data-bs-dismiss="modal">Fechar</button>
+                                        <button class="btn btn-primary" data-bs-target="#exampleModalToggle3"
+                                            data-bs-toggle="modal">Salvar</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <button style="border: none; background-color: transparent;" data-bs-target="#modal-trash"
+                            data-bs-toggle="modal"><i class="bi bi-trash"></i></button>
+                        <button type="button" style="border: none; background-color: transparent;"
+                            data-bs-toggle="modal" data-bs-target="#modal6" data-bs-whatever="@mdo"><i
+                                class="bi bi-pencil"></i></button>
+                    </td>
+                </tr>
+                <tr>
+                    <th scope="col"><input type="checkbox" name="" id=""></th>
+                    <th scope="row">7</th>
+                    <td><select name="" id="" class="form-select statusProduto">
+                            <option selected>inativo</option>
+                            <option>ativo</option>
+                        </select></td>
+                    <td>
+                        <img class="imagemProduto" src="/assets/images/kitRedDragon.jpg" alt="">
+                        Kit Redragon
+                    </td>
+                    <td>Informática</td>
+                    <td>300</td>
+                    <td>34</td>
+                    <td>9</td>
+                    <td>
+                        <div class="modal fade" id="modal7" tabindex="-1" aria-labelledby="exampleModalLabel"
+                            aria-hidden="true">
+                            <div class="modal-dialog modal-dialog-centered">
+                                <div class="modal-content">
+                                    <div class="modal-header">
+                                        <h1 class="modal-title fs-5" id="exampleModalLabel">Editar produto</h1>
+                                        <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                            aria-label="Close"></button>
+                                    </div>
+                                    <div class="modal-body">
+                                        <form>
+                                            <div class="mb-3">
+                                                <label for="recipient-name" class="col-form-label">Código:</label>
+                                                <input type="text" class="form-control" value="7" id="recipient-name">
+                                            </div>
+                                            <div class="mb-3">
+                                                <label for="formFile" class="form-label">Foto:</label>
+                                                <input class="form-control" type="file" id="formFile">
+                                            </div>
+                                            <div class="mb-3">
+                                                <label for="name" class="col-form-label">Nome:</label>
+                                                <input type="text" class="form-control" value="Kit Redragon" id="name">
+                                            </div>
+                                            <div class="mb-3">
+                                                <label for="category" class="col-form-label">Categoria:</label>
+                                                <input type="text" class="form-control" value="Informática"
+                                                    id="category">
+                                            </div>
+                                            <div class="mb-3">
+                                                <label for="price" class="col-form-label">Preço:</label>
+                                                <input type="text" class="form-control" value="300" id="price">
+                                            </div>
+                                        </form>
+                                    </div>
+                                    <div class="modal-footer">
+                                        <button type="button" class="btn btn-secondary"
+                                            data-bs-dismiss="modal">Fechar</button>
+                                        <button class="btn btn-primary" data-bs-target="#exampleModalToggle3"
+                                            data-bs-toggle="modal">Salvar</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <button style="border: none; background-color: transparent;" data-bs-target="#modal-trash"
+                            data-bs-toggle="modal"><i class="bi bi-trash"></i></button>
+                        <button type="button" style="border: none; background-color: transparent;"
+                            data-bs-toggle="modal" data-bs-target="#modal7" data-bs-whatever="@mdo"><i
+                                class="bi bi-pencil"></i></button>
+                    </td>
+                </tr>
+                <tr>
+                    <th scope="col"><input type="checkbox" name="" id=""></th>
+                    <th scope="row">8</th>
+                    <td><select name="" id="" class="form-select statusProduto">
+                            <option>inativo</option>
+                            <option selected>ativo</option>
+                        </select></td>
+                    <td>
+                        <img class="imagemProduto" src="/assets/images/gabineteTGT.jpg" alt="">
+                        Gabinete TGT
+                    </td>
+                    <td>Informática</td>
+                    <td>400</td>
+                    <td>34</td>
+                    <td>9</td>
+                    <td>
+                        <div class="modal fade" id="modal8" tabindex="-1" aria-labelledby="exampleModalLabel"
+                            aria-hidden="true">
+                            <div class="modal-dialog modal-dialog-centered">
+                                <div class="modal-content">
+                                    <div class="modal-header">
+                                        <h1 class="modal-title fs-5" id="exampleModalLabel">Editar produto</h1>
+                                        <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                            aria-label="Close"></button>
+                                    </div>
+                                    <div class="modal-body">
+                                        <form>
+                                            <div class="mb-3">
+                                                <label for="recipient-name" class="col-form-label">Código:</label>
+                                                <input type="text" class="form-control" value="8" id="recipient-name">
+                                            </div>
+                                            <div class="mb-3">
+                                                <label for="formFile" class="form-label">Foto:</label>
+                                                <input class="form-control" type="file" id="formFile">
+                                            </div>
+                                            <div class="mb-3">
+                                                <label for="name" class="col-form-label">Nome:</label>
+                                                <input type="text" class="form-control" value="Gabinete TGT" id="name">
+                                            </div>
+                                            <div class="mb-3">
+                                                <label for="category" class="col-form-label">Categoria:</label>
+                                                <input type="text" class="form-control" value="Informática"
+                                                    id="category">
+                                            </div>
+                                            <div class="mb-3">
+                                                <label for="price" class="col-form-label">Preço:</label>
+                                                <input type="text" class="form-control" value="400" id="price">
+                                            </div>
+                                        </form>
+                                    </div>
+                                    <div class="modal-footer">
+                                        <button type="button" class="btn btn-secondary"
+                                            data-bs-dismiss="modal">Fechar</button>
+                                        <button class="btn btn-primary" data-bs-target="#exampleModalToggle3"
+                                            data-bs-toggle="modal">Salvar</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <button style="border: none; background-color: transparent;" data-bs-target="#modal-trash"
+                            data-bs-toggle="modal"><i class="bi bi-trash"></i></button>
+                        <button type="button" style="border: none; background-color: transparent;"
+                            data-bs-toggle="modal" data-bs-target="#modal8" data-bs-whatever="@mdo"><i
+                                class="bi bi-pencil"></i></button>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <div class="clearfix" style="margin-bottom: 3rem;">
+            <div class="hint-text">
+                Mostrando <b>8</b> de <b>20</b> registros
+            </div>
+            <ul class="pagination">
+                <li class="page-item disabled"><a href="" class="page-link">Anterior</a></li>
+                <li class="page-item active"><a href="" class="page-link">1</a></li>
+                <li class="page-item"><a href="" class="page-link">2</a></li>
+                <li class="page-item"><a href="" class="page-link">3</a></li>
+                <li class="page-item"><a href="" class="page-link">4</a></li>
+                <li class="page-item"><a href="" class="page-link">5</a></li>
+                <li class="page-item"><a href="" class="page-link">Próxima</a></li>
+            </ul>
+        </div>
+    </div>
+    <footer>
+        <div class="container">
+            <p>&copy; 2024 Prods - Todos os direitos reservados</p>
+        </div>
+    </footer>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+        crossorigin="anonymous"></script>
+    <script src="/assets/js/scriptProdutos.js"></script>
+</body>
+
+</html>

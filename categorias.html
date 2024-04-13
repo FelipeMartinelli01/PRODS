@@ -1,0 +1,429 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Categorias</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.0/font/bootstrap-icons.css" rel="stylesheet">
+    <link rel="stylesheet" href="/assets/css/styleCategorias.css">
+    <link rel="shortcut icon" href="/assets/images/favicon.svg" />
+
+</head>
+
+<body>
+    <nav class="navbar bg-body-tertiary ">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="produtos.html"><img src="/assets/images/logo.svg" alt=""></a>
+        </div>
+    </nav>
+
+    <div class="header">
+        <h1>Categorias</h1>
+    </div>
+    <div class="cadastrar">
+        <a href="cadastroCategorias.html"><button  class="btn btn-primary" id="btnCadastrar"> Cadastrar nova categoria</button></a>
+        <a href="produtos.html"><button  class="btn btn-primary" id="btnCadastrar"> Produtos</button></a>
+
+    </div>
+
+
+
+    <div class="container-table">
+        <table class="table table-hover">
+            <thead>
+                <tr>
+                    <th>Código</th>
+                    <th>Nome da categoria</th>
+                    <th>Tipo</th>
+                    <th>Status</th>
+                    <th>Ações</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <th scope="row">1</th>
+                    <td>Smartphone</td>
+                    <td><select name="" id="" class="form-select tipoCategoria">
+                            <option selected>Principal</option>
+                            <option>Subcategoria</option>
+                        </select></td>
+                    <td><select name="" id="" class="form-select statusProduto">
+                            <option>inativo</option>
+                            <option selected>ativo</option>
+                        </select></td>
+                    <td>
+                        <div class="modal fade" id="modal-trash" aria-hidden="true"
+                            aria-labelledby="exampleModalToggleLabel" tabindex="-1">
+                            <div class="modal-dialog modal-dialog-centered">
+                                <div class="modal-content">
+
+                                    <div class="modal-body">
+                                        <h5>Tem certeza que deseja remover essa categoria?</h5>
+                                    </div>
+                                    <div class="modal-footer">
+                                        <button class="btn btn-danger" data-bs-target="#exampleModalToggle2"
+                                            data-bs-toggle="modal">Remover categoria</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="modal fade" id="exampleModalToggle2" aria-hidden="true"
+                            aria-labelledby="exampleModalToggleLabel" tabindex="-1">
+                            <div class="modal-dialog modal-dialog-centered">
+                                <div class="modal-content bg-danger text-white">
+                                    <div class="modal-header">
+                                        <h1 class="modal-title fs-5" id="exampleModalToggleLabel">Categoria removida com
+                                            sucesso</h1>
+                                        <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                            aria-label="Close"></button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="modal fade" id="exampleModalToggle3" aria-hidden="true"
+                            aria-labelledby="exampleModalToggleLabel" tabindex="-1">
+                            <div class="modal-dialog modal-dialog-centered">
+                                <div class="modal-content bg-success text-white">
+                                    <div class="modal-header">
+                                        <h1 class="modal-title fs-5 " id="exampleModalToggleLabel">Categoria salva com
+                                            sucesso
+                                        </h1>
+                                        <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                            aria-label="Close"></button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="modal fade" id="modal-edit1" tabindex="-1" aria-labelledby="exampleModalLabel"
+                            aria-hidden="true">
+                            <div class="modal-dialog modal-dialog-centered">
+                                <div class="modal-content">
+                                    <div class="modal-header">
+                                        <h1 class="modal-title fs-5" id="exampleModalLabel">Editar categoria</h1>
+                                        <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                            aria-label="Close"></button>
+                                    </div>
+                                    <div class="modal-body">
+                                        <form>
+                                            <div class="mb-3">
+                                                <label for="recipient-name" class="col-form-label">Código:</label>
+                                                <input type="text" class="form-control" value="1" id="recipient-name">
+                                            </div>
+                                            <div class="mb-3">
+                                                <label for="name" class="col-form-label">Nome da categoria:</label>
+                                                <input type="text" class="form-control" value="Smartphone" id="name">
+                                            </div>
+                                            <div class="mb-3">
+                                                <label for="description" class="col-form-label">Descrição:</label>
+                                                <textarea class="form-control" id="description"
+                                                    rows="3">Lorem ipsum dolor sit amet consectetur, adipisicing elit. At vero dicta dignissimos, aperiam quos adipisci? Quos, ut maxime animi, ea qui esse praesentium numquam quam modi commodi perspiciatis ducimus expedita!</textarea>
+                                            </div>
+                                        </form>
+                                    </div>
+                                    <div class="modal-footer">
+                                        <button type="button" class="btn btn-secondary"
+                                            data-bs-dismiss="modal">Fechar</button>
+                                        <button class="btn btn-primary" data-bs-target="#exampleModalToggle3"
+                                            data-bs-toggle="modal">Salvar</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="modal fade" id="modal-description" tabindex="-1" aria-labelledby="exampleModalLabel"
+                            aria-hidden="true">
+                            <div class="modal-dialog modal-dialog-centered">
+                                <div class="modal-content">
+                                    <div class="modal-header">
+                                        <h1 class="modal-title fs-5" id="exampleModalLabel">Descrição</h1>
+                                        <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                            aria-label="Close"></button>
+                                    </div>
+                                    <div class="modal-body">
+                                        <form>
+                                            <div class="mb-3">
+                                                <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Dolorum,
+                                                    eius! Fugit quidem fuga saepe iure recusandae, consectetur optio
+                                                    tempora corporis aspernatur numquam, illum odit possimus omnis
+                                                    magnam exercitationem illo eligendi! Lorem ipsum dolor sit, amet
+                                                    consectetur adipisicing elit. Ab quae architecto magnam perspiciatis
+                                                    nostrum impedit possimus quibusdam accusantium quia autem, porro at
+                                                    corrupti expedita fugiat magni aspernatur distinctio excepturi
+                                                    assumenda?</p>
+                                            </div>
+
+                                        </form>
+                                    </div>
+                                    <div class="modal-footer">
+                                        <button type="button" class="btn btn-secondary"
+                                            data-bs-dismiss="modal">Fechar</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <button style="border: none; background-color: transparent;" data-bs-target="#modal-trash"
+                            data-bs-toggle="modal"><i class="bi bi-trash"></i></button>
+                        <button type="button" style="border: none; background-color: transparent;"
+                            data-bs-toggle="modal" data-bs-target="#modal-edit1"><i class="bi bi-pencil"></i></button>
+                        <button type="button" style="border: none; background-color: transparent;"
+                            data-bs-toggle="modal" data-bs-target="#modal-description"><i
+                                class="bi bi-eye"></i></button>
+                    </td>
+                </tr>
+                <tr>
+                    <th scope="row">2</th>
+                    <td>Televisão</td>
+                    <td><select name="" id="" class="form-select tipoCategoria">
+                            <option selected>Principal</option>
+                            <option>Subcategoria</option>
+                        </select></td>
+                    <td><select name="" id="" class="form-select statusProduto">
+                            <option>inativo</option>
+                            <option selected>ativo</option>
+                        </select></td>
+                    <td>
+                        <div class="modal fade" id="modal-edit2" tabindex="-1" aria-labelledby="exampleModalLabel"
+                            aria-hidden="true">
+                            <div class="modal-dialog modal-dialog-centered">
+                                <div class="modal-content">
+                                    <div class="modal-header">
+                                        <h1 class="modal-title fs-5" id="exampleModalLabel">Editar categoria</h1>
+                                        <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                            aria-label="Close"></button>
+                                    </div>
+                                    <div class="modal-body">
+                                        <form>
+                                            <div class="mb-3">
+                                                <label for="recipient-name" class="col-form-label">Código:</label>
+                                                <input type="text" class="form-control" value="2" id="recipient-name">
+                                            </div>
+                                            <div class="mb-3">
+                                                <label for="name" class="col-form-label">Nome da categoria:</label>
+                                                <input type="text" class="form-control" value="Televisão" id="name">
+                                            </div>
+                                            <div class="mb-3">
+                                                <label for="description" class="col-form-label">Descrição:</label>
+                                                <textarea class="form-control" id="description"
+                                                    rows="3">Lorem ipsum dolor sit amet consectetur, adipisicing elit. At vero dicta dignissimos, aperiam quos adipisci? Quos, ut maxime animi, ea qui esse praesentium numquam quam modi commodi perspiciatis ducimus expedita!</textarea>
+                                            </div>
+                                        </form>
+                                    </div>
+                                    <div class="modal-footer">
+                                        <button type="button" class="btn btn-secondary"
+                                            data-bs-dismiss="modal">Fechar</button>
+                                        <button class="btn btn-primary" data-bs-target="#exampleModalToggle3"
+                                            data-bs-toggle="modal">Salvar</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <button style="border: none; background-color: transparent;" data-bs-target="#modal-trash"
+                            data-bs-toggle="modal"><i class="bi bi-trash"></i></button>
+                        <button type="button" style="border: none; background-color: transparent;"
+                            data-bs-toggle="modal" data-bs-target="#modal-edit2"><i class="bi bi-pencil"></i></button>
+                        <button type="button" style="border: none; background-color: transparent;"
+                            data-bs-toggle="modal" data-bs-target="#modal-description"><i
+                                class="bi bi-eye"></i></button>
+                    </td>
+                </tr>
+                <tr>
+                    <th scope="row">3</th>
+                    <td>Informática</td>
+                    <td><select name="" id="" class="form-select tipoCategoria">
+                            <option selected>Principal</option>
+                            <option>Subcategoria</option>
+                        </select></td>
+                    <td><select name="" id="" class="form-select statusProduto">
+                            <option>inativo</option>
+                            <option selected>ativo</option>
+                        </select></td>
+                    <td>
+                        <div class="modal fade" id="modal-edit3" tabindex="-1" aria-labelledby="exampleModalLabel"
+                            aria-hidden="true">
+                            <div class="modal-dialog modal-dialog-centered">
+                                <div class="modal-content">
+                                    <div class="modal-header">
+                                        <h1 class="modal-title fs-5" id="exampleModalLabel">Editar categoria</h1>
+                                        <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                            aria-label="Close"></button>
+                                    </div>
+                                    <div class="modal-body">
+                                        <form>
+                                            <div class="mb-3">
+                                                <label for="recipient-name" class="col-form-label">Código:</label>
+                                                <input type="text" class="form-control" value="3" id="recipient-name">
+                                            </div>
+                                            <div class="mb-3">
+                                                <label for="name" class="col-form-label">Nome da categoria:</label>
+                                                <input type="text" class="form-control" value="Informática" id="name">
+                                            </div>
+                                            <div class="mb-3">
+                                                <label for="description" class="col-form-label">Descrição:</label>
+                                                <textarea class="form-control" id="description"
+                                                    rows="3">Lorem ipsum dolor sit amet consectetur, adipisicing elit. At vero dicta dignissimos, aperiam quos adipisci? Quos, ut maxime animi, ea qui esse praesentium numquam quam modi commodi perspiciatis ducimus expedita!</textarea>
+                                            </div>
+                                        </form>
+                                    </div>
+                                    <div class="modal-footer">
+                                        <button type="button" class="btn btn-secondary"
+                                            data-bs-dismiss="modal">Fechar</button>
+                                        <button class="btn btn-primary" data-bs-target="#exampleModalToggle3"
+                                            data-bs-toggle="modal">Salvar</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <button style="border: none; background-color: transparent;" data-bs-target="#modal-trash"
+                            data-bs-toggle="modal"><i class="bi bi-trash"></i></button>
+                        <button type="button" style="border: none; background-color: transparent;"
+                            data-bs-toggle="modal" data-bs-target="#modal-edit3"><i class="bi bi-pencil"></i></button>
+                        <button type="button" style="border: none; background-color: transparent;"
+                            data-bs-toggle="modal" data-bs-target="#modal-description"><i
+                                class="bi bi-eye"></i></button>
+                    </td>
+                </tr>
+                <tr>
+                    <th scope="row">4</th>
+                    <td>Video Game</td>
+                    <td><select name="" id="" class="form-select tipoCategoria">
+                            <option selected>Principal</option>
+                            <option>Subcategoria</option>
+                        </select></td>
+                    <td><select name="" id="" class="form-select statusProduto">
+                            <option>inativo</option>
+                            <option selected>ativo</option>
+                        </select></td>
+                    <td>
+                        <div class="modal fade" id="modal-edit4" tabindex="-1" aria-labelledby="exampleModalLabel"
+                            aria-hidden="true">
+                            <div class="modal-dialog modal-dialog-centered">
+                                <div class="modal-content">
+                                    <div class="modal-header">
+                                        <h1 class="modal-title fs-5" id="exampleModalLabel">Editar categoria</h1>
+                                        <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                            aria-label="Close"></button>
+                                    </div>
+                                    <div class="modal-body">
+                                        <form>
+                                            <div class="mb-3">
+                                                <label for="recipient-name" class="col-form-label">Código:</label>
+                                                <input type="text" class="form-control" value="4" id="recipient-name">
+                                            </div>
+                                            <div class="mb-3">
+                                                <label for="name" class="col-form-label">Nome da categoria:</label>
+                                                <input type="text" class="form-control" value="Video Game" id="name">
+                                            </div>
+                                            <div class="mb-3">
+                                                <label for="description" class="col-form-label">Descrição:</label>
+                                                <textarea class="form-control" id="description"
+                                                    rows="3">Lorem ipsum dolor sit amet consectetur, adipisicing elit. At vero dicta dignissimos, aperiam quos adipisci? Quos, ut maxime animi, ea qui esse praesentium numquam quam modi commodi perspiciatis ducimus expedita!</textarea>
+                                            </div>
+                                        </form>
+                                    </div>
+                                    <div class="modal-footer">
+                                        <button type="button" class="btn btn-secondary"
+                                            data-bs-dismiss="modal">Fechar</button>
+                                        <button class="btn btn-primary" data-bs-target="#exampleModalToggle3"
+                                            data-bs-toggle="modal">Salvar</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <button style="border: none; background-color: transparent;" data-bs-target="#modal-trash"
+                            data-bs-toggle="modal"><i class="bi bi-trash"></i></button>
+                        <button type="button" style="border: none; background-color: transparent;"
+                            data-bs-toggle="modal" data-bs-target="#modal-edit4"><i class="bi bi-pencil"></i></button>
+                        <button type="button" style="border: none; background-color: transparent;"
+                            data-bs-toggle="modal" data-bs-target="#modal-description"><i
+                                class="bi bi-eye"></i></button>
+                    </td>
+                </tr>
+                <tr>
+                    <th scope="row">5</th>
+                    <td>Iphone</td>
+                    <td><select name="" id="" class="form-select tipoCategoria">
+                            <option>Principal</option>
+                            <option selected>Subcategoria</option>
+                        </select></td>
+                    <td><select name="" id="" class="form-select statusProduto">
+                            <option>inativo</option>
+                            <option selected>ativo</option>
+                        </select></td>
+                    <td>
+                        <div class="modal fade" id="modal-edit5" tabindex="-1" aria-labelledby="exampleModalLabel"
+                            aria-hidden="true">
+                            <div class="modal-dialog modal-dialog-centered">
+                                <div class="modal-content">
+                                    <div class="modal-header">
+                                        <h1 class="modal-title fs-5" id="exampleModalLabel">Editar categoria</h1>
+                                        <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                            aria-label="Close"></button>
+                                    </div>
+                                    <div class="modal-body">
+                                        <form>
+                                            <div class="mb-3">
+                                                <label for="recipient-name" class="col-form-label">Código:</label>
+                                                <input type="text" class="form-control" value="5" id="recipient-name">
+                                            </div>
+                                            <div class="mb-3">
+                                                <label for="name" class="col-form-label">Nome da categoria:</label>
+                                                <input type="text" class="form-control" value="Iphone" id="name">
+                                            </div>
+                                            <div class="mb-3">
+                                                <label for="description" class="col-form-label">Descrição:</label>
+                                                <textarea class="form-control" id="description"
+                                                    rows="3">Lorem ipsum dolor sit amet consectetur, adipisicing elit. At vero dicta dignissimos, aperiam quos adipisci? Quos, ut maxime animi, ea qui esse praesentium numquam quam modi commodi perspiciatis ducimus expedita!</textarea>
+                                            </div>
+                                        </form>
+                                    </div>
+                                    <div class="modal-footer">
+                                        <button type="button" class="btn btn-secondary"
+                                            data-bs-dismiss="modal">Fechar</button>
+                                        <button class="btn btn-primary" data-bs-target="#exampleModalToggle3"
+                                            data-bs-toggle="modal">Salvar</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <button style="border: none; background-color: transparent;" data-bs-target="#modal-trash"
+                            data-bs-toggle="modal"><i class="bi bi-trash"></i></button>
+                        <button type="button" style="border: none; background-color: transparent;"
+                            data-bs-toggle="modal" data-bs-target="#modal-edit5"><i class="bi bi-pencil"></i></button>
+                        <button type="button" style="border: none; background-color: transparent;"
+                            data-bs-toggle="modal" data-bs-target="#modal-description"><i
+                                class="bi bi-eye"></i></button>
+                    </td>
+                </tr>
+
+            </tbody>
+        </table>
+        <div class="clearfix" style="margin-bottom: 3rem;">
+            <div class="hint-text">
+                Mostrando <b>5</b> de <b>20</b> registros
+            </div>
+            <ul class="pagination">
+                <li class="page-item disabled"><a href="" class="page-link">Anterior</a></li>
+                <li class="page-item active"><a href="" class="page-link">1</a></li>
+                <li class="page-item"><a href="" class="page-link">2</a></li>
+                <li class="page-item"><a href="" class="page-link">3</a></li>
+                <li class="page-item"><a href="" class="page-link">4</a></li>
+                <li class="page-item"><a href="" class="page-link">5</a></li>
+                <li class="page-item"><a href="" class="page-link">Próxima</a></li>
+            </ul>
+        </div>
+    </div>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2024 Prods - Todos os direitos reservados</p>
+        </div>
+    </footer>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+        crossorigin="anonymous"></script>
+    <script src="/assets/js/categorias.js"></script>
+</body>
+
+</html>

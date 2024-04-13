@@ -1,0 +1,130 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.navbar{
+    --bs-navbar-padding-x: 1;
+}
+
+.container-fluid{   
+    background: rgb(0,172,255);
+    background: radial-gradient(circle, rgb(0, 170, 255) 0%, #006afc 100%);
+}
+
+.input-group{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-right: 10rem;
+}
+
+.input-group button{
+    background-color: lightgray;
+    border: grey;
+    color: white;
+}
+
+#campoSearch{
+    width: 50rem;
+}
+
+.navbar-brand img{
+    width: 15rem;
+    padding: 20px;
+}
+
+.header{
+    margin-top: 1rem;
+    background-color: rgb(245, 244, 244);
+    padding: 10px;
+    padding-left: 100px;
+    max-width: 100%;
+}
+
+.cadastrar{
+    display: flex;
+    flex-direction: row;
+    justify-content: end;
+    margin: 10px;
+    gap: 6px;
+}
+
+.container-table{
+    max-width: 90%;
+    margin: 0 auto;
+}
+
+.table{
+    margin-top: 3rem;
+}
+
+.statusProduto{
+    width: 7rem;
+}
+
+.tipoCategoria{
+    width: 10rem;
+}
+
+.pagination{
+    float: right;
+    margin-bottom: 5px;
+}
+
+.pagination li a{
+    border: none;
+    min-width: 30px;
+    min-height: 30px;
+    color: #999;
+    margin: 0 2px;
+    line-height: 30px;
+    border-radius: 2px !important;
+    text-align: center;
+    padding: 0 6px;
+}
+
+.pagination li a:hover{
+    color: black;
+}
+
+.pagination li.active a, .pagination li.active a.page-link{
+    background-color: #03A9F4;
+}
+
+.pagination li.active a:hover{
+    background-color: #0397D6;
+}
+
+.pagination li.disable a{
+    color: #ccc;
+}
+
+.pagination li a{
+    color: 15px;
+    padding-top: 6px;
+}
+
+.hint-text{
+    float: left;
+    margin-top: 10px;
+}   
+
+footer {
+    background-color: #333;
+    color: #fff;
+    text-align: center;
+    padding: 20px 0;
+}
+
+footer {
+    background: rgb(0, 172, 255);
+    background: radial-gradient(circle, rgba(0, 172, 255, 1) 0%, rgba(0, 106, 252, 1) 100%);
+    color: #fff;
+    text-align: center;
+    padding: 10px;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+}
